@@ -14,5 +14,6 @@ So I have decided to start working on a new version that will not even function 
 <h3>The design of the website 🏳️‍🌈</h3>
 The website will be in my brand new colorscheme that I am working on. It will feature brighter colors and will have more techy look. I want to make a use for emojis so they will be used more as well. I can't forget about border colors and gradients!
 
+<h3>AE</h3>
 
 
