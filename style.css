@@ -186,6 +186,9 @@ a {
 }
 
 
+.justify {
+  text-align: justify;
+}
 
 /*= Margins ==========*/ 
 
@@ -404,14 +407,14 @@ nav hr {
 
 .item-ln-2 {
   grid-column: 16 / span 17;
-  grid-row: 1 / span 34;
+  grid-row: 1 / span 30;
   width: 100%;
 }
 
 
 .item-ln-3 {
   grid-column: 16 / span 17;
-  grid-row: 35 / span 50;
+  grid-row: 31 / span 50;
 }
 
 .item-ln-4 {
