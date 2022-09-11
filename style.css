@@ -279,7 +279,7 @@ hr {
   text-align: center;
   text-transform: uppercase;
   font-weight: 800;
-  padding: 5px 25px;
+  /*! padding: 5px 25px; */
   color: white;
 }
 
@@ -296,7 +296,7 @@ nav {
   left: 0;
   top: 0;
   width: 100%;
-  background-color: #00000030;
+  background-color: #00000021;
   z-index: 3;
   backdrop-filter: blur(3.5px);
 }
@@ -434,7 +434,8 @@ nav hr {
   border-radius: 5px;
   margin-top: 2px;
   margin-bottom: 6px;
-  font-size: 14px;
+  font-size: 13px;
+  padding-top: 2px;
 }
 
 
@@ -447,8 +448,8 @@ nav hr {
    background: rgb(88,101,242);
    background: linear-gradient(90deg, rgba(88,101,242,1) 0%, rgba(150,90,247,1) 100%); 
     width: 100%;
-    padding-top: 15px;
-    padding-bottom: 10px;
+    padding-top: 4px;
+    padding-bottom: 5px;
 }
 
 .btn-ln-fediverse {
@@ -483,6 +484,7 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
 .btn-scl-img {
   padding-bottom: 0px;
   margin-top: auto;
+  padding-top: 7px;
 }
 
 .btn-scl-img img {
@@ -491,12 +493,39 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   margin-bottom: 3px;
 }
 
+.btn-scl-title {
+  padding-bottom: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .ln-side-bts-box {
+    display: flex;
+    flex-direction:  row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  
+  .ln-side-bts {
+    min-width: 168px;
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+  
+  .ln-side-bt {
+    padding: 10px;
+  }
+  
+}
+
+
 /*= SIDE BUTTONS LANDING =========== */
 
 .ln-side-bt {
   background-color: var(--background2);
   color: var(--foreground);
   border: 2px var(--background2) solid;
+  padding: 5px;
 }
 
 .ln-side-bt:hover {
