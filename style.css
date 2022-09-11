@@ -1,4 +1,4 @@
-@-webkit-keyframes scrolling {
+@-webkit-keyframes scrolling {
     from {
         background-position: 0 0;
     }
@@ -503,13 +503,14 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
     flex-direction:  row;
     flex-wrap: wrap;
     justify-content: center;
-
+    min-width: 500px;
   }
   
   .ln-side-bts {
-    min-width: 168px;
-    margin-right: 4px;
+    display: inline-block;
+    min-width: 46.5%;
     margin-left: 4px;
+    margin-right: 4px;
   }
   
   .ln-side-bt {
@@ -605,6 +606,7 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
 
 
 }
+
 
 
 
