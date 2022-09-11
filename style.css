@@ -296,8 +296,9 @@ nav {
   left: 0;
   top: 0;
   width: 100%;
-  background-color: #19171c;
+  background-color: #00000030;
   z-index: 3;
+  backdrop-filter: blur(3.5px);
 }
 
 .nav-br {
