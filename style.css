@@ -322,6 +322,7 @@ nav hr {
   width: 78px; 
   margin-top: auto;
   margin-bottom: auto;
+  padding-bottom: 4px;
   padding: 5px;
   pointer-events: none;
   z-index: 3;
@@ -533,7 +534,19 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   
   .btn-ln-scl {
     min-width: 45%;
-    width: 147px;
+    width: 165px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+}
+
+/* FOR EVEN SMALLERRRR SCREENS */
+@media only screen and (max-width: 400px) {
+  
+  .btn-ln-scl {
+    min-width: 90%;
+    width: 140px;
     margin-left: 5px;
     margin-right: 5px;
   }
