@@ -553,6 +553,17 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   
 }
 
+/* Stupid iPhone users */
+@media only screen and (max-width: 380px) {
+  
+  .btn-ln-scl {
+    min-width: 90%;
+    width: 146px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+}
 
 /*= SIDE BUTTONS LANDING =========== */
 
