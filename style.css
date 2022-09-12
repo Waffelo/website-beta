@@ -516,8 +516,26 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
     margin-right: 4px;
   }
   
+
+  
   .ln-side-bt {
     padding: 10px;
+  }
+  
+  /* Sidebar buttons landing page*/
+  
+  .button-ln-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .btn-ln-scl {
+    min-width: 45%;
+    width: 147px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   
 }
