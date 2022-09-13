@@ -185,6 +185,9 @@ a {
   color: inherit;
 }
 
+.tabbed::before {
+  content: "\00a0\00a0\00a0\00a0\00a0";
+}
 
 .justify {
   text-align: justify;
@@ -264,9 +267,6 @@ hr {
 }
 
 img {
-  max-width: 500px;
-  width: 100%;
-  margin-bottom: 11px;
   
 }
 
@@ -365,12 +365,17 @@ nav hr {
 
 /* = layout columns and shit =============== */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 810px) {
  
   .item-ln-2 {
     width: 100%;
   }
 
+  .ln-links-nav {
+    justify-content: center;
+    margi
+  }
+  
 }
 
 
@@ -388,42 +393,173 @@ nav hr {
   width: 100%;
   background-color: var(--background);
   border-radius: 12px;
-
+  grid-auto-columns:1fr;
 }
 
 
 .grid-item {
-  text-align: center;
   padding: 10px;
+  position: relative;
 }
 
 /*=GRID LANDING ===========*/
 
 .item-ln-1 {
-  grid-column: 1 / span 15;
+  grid-column: 1 / 50;
   grid-row: 1 / span 49;
   padding-top: 0px;
   width: 100%;
 }
 
 .item-ln-2 {
-  grid-column: 16 / span 17;
+  grid-column: 50 / 62;
   grid-row: 1 / span 30;
   width: 100%;
 }
 
 
 .item-ln-3 {
-  grid-column: 16 / span 17;
+  grid-column: 50 / 62;
   grid-row: 31 / span 50;
 }
 
 .item-ln-4 {
-  grid-column: 1 / span 15;
+  grid-column: 1 / 50;
   grid-row: 50 / span 100;
 }
 
-@media only screen and (max-width: 768px) {
+/*= GRID ABOUT ME ===============*/
+
+.item-ab-1 {
+  grid-column: 1 / 50;
+  grid-row: 1 / span 30;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-ab-2 {
+  grid-column: 1 / 62;
+  grid-row: 31 / span 49;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-ab-3 {
+  grid-column: 1 / 62;
+  grid-row: 80 / span 35;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-ab-4 {
+  grid-column: 1 / 32;
+  grid-row: 115 / span 35;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-ab-5 {
+  grid-column: 32 / 62;
+  grid-row: 115 / span 35;
+  padding-top: 0px;
+  width: 100%;
+}
+
+
+.about-pfp  {
+  float: left;
+  border-radius: 13px;
+  width: 44%;
+  margin-right: 24px;
+  min-width: 295px;
+}
+
+
+
+.about-pfp img {
+  width: 50px;
+}
+
+.about-pfp-box {
+  margin-top: 1px;
+  margin-left: -6px;
+  justify-content: center;
+}
+
+.about-heading {
+  font-size: 16px;
+  margin-top: -2px;
+  margin-bottom: -4px;
+}
+
+.about-bio {
+  margin-bottom: -9px;
+  color: var(--foreground2);
+}
+
+.about-desc {
+  margin-top: 26px;
+  text-align: left;
+}
+
+.about-desc-list {
+  padding-left: 20px;
+  border-radius: 8px;
+  border: 1.5px var(--background2) solid;
+}
+
+@media only screen and (max-width: 810px) {
+  
+  .about-pfp-box {
+    display: flex;
+  }
+  
+  .about-pfp {
+    width: 100%;
+    float: none;
+    margin-top: 7px;
+    margin-left: 1%;
+    padding-left: 0px;
+    margin-bottom: 15px; 
+    /*! max-width: 508px; */
+    margin-right: 0px;
+  }
+  
+  .about-info {
+    display: inline;
+    text-align: center;
+  }
+  
+  .about-heading {
+    margin-top: -10.9px;
+    font-size: 23px;
+    line-height: 70px;
+    margin-bottom: -28px;
+  }
+  
+  .about-bio {
+    font-size: 17px;
+    margin-top: 17px;
+  }
+  
+  .about-desc-list {
+    justify-content: center;
+    border-radius: 12px;
+    border: 1.5px var(--background2) solid;
+  }
+  
+  .about-desc-list p {
+    margin-left: 1px;
+  }
+
+  .about-desc-desc {
+    text-align: center;
+  }
+  
+}
+
+
+@media only screen and (max-width: 810px) {
   .grid-container {
     display: inline-block;
   }
@@ -501,7 +637,7 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   padding-bottom: 5px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 810px) {
   .ln-side-bts-box {
     display: flex;
     flex-direction:  row;
@@ -512,9 +648,10 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   
   .ln-side-bts {
     display: inline-block;
-    min-width: 46.5%;
-    margin-left: 4px;
-    margin-right: 4px;
+    min-width: 47.5%;
+    margin-left: 2px;
+    margin-right: 2px;
+    /*! width: 49%; */
   }
   
 
@@ -636,7 +773,7 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   padding-left: 5px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 810px) {
 
   .blog-box {
     justify-content: center;
