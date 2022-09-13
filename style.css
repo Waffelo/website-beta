@@ -446,7 +446,7 @@ nav hr {
 
 .item-ab-3 {
   grid-column: 1 / 62;
-  grid-row: 115 / span 40;
+  grid-row: 115 / span 35;
   padding-top: 0px;
   width: 100%;
 }
@@ -508,6 +508,113 @@ nav hr {
   border: 1.5px var(--background2) solid;
   display: flex;
 }
+
+/*= EDU BOX ABOUT ============*/
+
+.edu-box {
+  height: 255px;
+  margin-top: 14px;
+}
+
+.edu-logo img {
+  width: 100%;
+  max-width: 222px;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-left: 17px;
+
+}
+
+.edu-logo img:hover {
+    -webkit-filter: brightness(75%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.edu-logo {
+  float: left;
+  margin-right: 16px;
+}
+
+.edu-info {
+  margin-top: 6px;
+}
+
+.edu-heading {
+  font-size: 18px;
+  display: flex;
+}
+
+.edu-heading i {
+  margin-top: 18px;
+  margin-left: 3px;
+  font-size: 16px;
+  
+}
+
+.edu-list {
+  margin-right: 10px;
+  margin-left: 255px;
+  height: 186px;
+  margin-right: 13px;
+}
+
+.edu-list li {
+  margin-left: -7px;
+}
+
+.edu-list ul {
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 810px) {
+  .edu-logo {
+  float: none;
+  text-align: center;
+   margin-bottom: -5px;
+  }
+  
+  .edu-box {
+    height: 59%;
+    margin-top: 15px;
+  }
+  
+  .edu-heading {
+    display: block;
+    text-align: center;
+    margin-bottom: -6px;
+  }
+  
+   .edu-heading i {
+  }
+  
+  .edu-list {
+    display: block;
+    margin-left: 12px;
+    margin-top: 18px;
+  }
+  
+  .edu-list li {
+    margin-top: 10px;
+    margin-left: -14px;
+  }
+      
+    .edu-list li {
+    margin-top: 6px;
+    margin-left: -24px;
+    padding: 5px;
+    list-style: none;
+    background-color: #00000030;
+    margin-right: 16px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+}
+
 
 @media only screen and (max-width: 810px) {
   
@@ -689,6 +796,8 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
     margin-right: 5px;
   }
   
+
+  
 }
 
 /* Stupid iPhone users */
@@ -726,7 +835,7 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   justify-content: center;
   width: 101%;
   /*! margin-left: -39px; */
-  margin-top: 14px;
+  margin-top: 17px;
 }
   
 .btn-skl-scl {
@@ -753,8 +862,9 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   color: var(--foreground);
 }
 
-.btn-skl {
-  background-color: var(--background3);
+.btn-skl:hover {
+  background-color: #1d1a21;
+
 }
 
 .btn-skl {
@@ -763,6 +873,11 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   margin-left: 5px;
   margin-right: 5px;
   justify-content: center;
+  background-color: var(--background3);
+}
+
+.btn-skl::hover {
+  
 }
 
 /*= FOOTER ====================*/
