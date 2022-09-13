@@ -133,7 +133,7 @@ body {
 
 .main-container {
   padding-top: 63px;
-  max-width: 900px;
+  max-width: 920px;
   position: relative;
   margin-bottom: 25px;
 }
@@ -230,7 +230,7 @@ a {
 /*= Display Tags ===========*/
 
 .flex {
-  display: flex;
+  /*! display: flex; */
 }
 
 .flex-column {
@@ -446,21 +446,21 @@ nav hr {
 
 .item-ab-3 {
   grid-column: 1 / 62;
-  grid-row: 80 / span 35;
+  grid-row: 115 / span 40;
   padding-top: 0px;
   width: 100%;
 }
 
 .item-ab-4 {
   grid-column: 1 / 32;
-  grid-row: 115 / span 35;
+  grid-row: 80 / span 35;
   padding-top: 0px;
   width: 100%;
 }
 
 .item-ab-5 {
   grid-column: 32 / 62;
-  grid-row: 115 / span 35;
+  grid-row: 80 / span 35;
   padding-top: 0px;
   width: 100%;
 }
@@ -506,6 +506,7 @@ nav hr {
   padding-left: 20px;
   border-radius: 8px;
   border: 1.5px var(--background2) solid;
+  display: flex;
 }
 
 @media only screen and (max-width: 810px) {
@@ -716,6 +717,53 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   border: 2px var(--blue1) solid;
 }
 
+/*= ABOUT ME BUTTONS =================*/
+
+.button-skl-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 101%;
+  /*! margin-left: -39px; */
+  margin-top: 14px;
+}
+  
+.btn-skl-scl {
+  min-width: 96%;
+  width: 115px;
+  margin-left: 23px;
+  /*! margin-right: 11px; */
+}
+
+.btn-skl-img {
+  padding-bottom: 0px;
+  margin-top: auto;
+  padding-top: 7px;
+}
+
+.btn-skl-img img {
+  width: 30px;
+  margin-left: 0px;
+  margin-bottom: 8px;
+}
+
+.btn-skl-title {
+  padding-bottom: 7px;
+  color: var(--foreground);
+}
+
+.btn-skl {
+  background-color: var(--background3);
+}
+
+.btn-skl {
+  min-width: 13%;
+  width: 118px;
+  margin-left: 5px;
+  margin-right: 5px;
+  justify-content: center;
+}
 
 /*= FOOTER ====================*/
 
