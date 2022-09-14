@@ -583,8 +583,10 @@ nav hr {
   }
   
   .edu-box {
-    height: 59%;
-    margin-top: 15px;
+  min-height: 59%;
+  margin-top: 15px;
+  height: 527px;
+  max-height: 88%;
   }
   
   .edu-heading {
