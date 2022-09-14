@@ -266,8 +266,8 @@ hr {
   padding-bottom: initial;
 }
 
-img {
-  
+video {
+  max-width: 650px
 }
 
 .round {
@@ -420,7 +420,7 @@ nav hr {
 
 .item-ln-3 {
   grid-column: 50 / 62;
-  grid-row: 31 / span 50;
+  grid-row: 31 / span 30;
 }
 
 .item-ln-4 {
@@ -571,6 +571,11 @@ nav hr {
 }
 
 @media only screen and (max-width: 810px) {
+  
+  video {
+    max-width: 100%;
+  }
+  
   .edu-logo {
   float: none;
   text-align: center;
@@ -595,6 +600,7 @@ nav hr {
     display: block;
     margin-left: 12px;
     margin-top: 18px;
+    padding-bottom: 10px;
   }
   
   .edu-list li {
