@@ -546,7 +546,7 @@ nav hr {
 
 .item-ln-1 {
   grid-column: 1 / 50;
-  grid-row: 1 / span 30;
+  grid-row: 1 / span 45;
   padding-top: 0px;
   width: 100%;
 }
@@ -565,7 +565,7 @@ nav hr {
 
 .item-ln-4 {
   grid-column: 1 / 50;
-  grid-row: 31 / span 100;
+  grid-row: 46 / span 100;
 }
 
 /*= GRID ABOUT ME ===============*/
@@ -734,6 +734,115 @@ nav hr {
 .jr ul {
   margin-left: -33px;
 }
+
+/**/
+
+.gal-item-2 {
+    grid-column: 1 / 62;
+    grid-row: 31 / span 1;
+    width: 100%;
+}
+
+.gal-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: left;
+  gap: 10px;
+  max-width: 1916px;
+  margin-left: 8px;
+}
+
+
+.gal-content {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  display: inline-block;
+  color: var(--background);
+  position: relative;
+  background-color: #4a404d;
+  border-radius: 12px;
+  
+}
+
+.gal-caption {
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  opacity: 0.0;
+  color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gal-header {
+  font-weight: 800;
+}
+
+.gal-description {
+  font-size: 12px;
+  opacity: 50%;
+}
+
+.gal-content:hover .gal-caption {
+  transform: translateY(-20px);
+  opacity: 1.0;
+}
+
+.gal-content img {
+  height: 250px;
+  width: 250px;
+  transition: transform 0.4s ease;
+  
+}
+
+.gal-content:hover img { 
+  transform: scale(1.1);
+}
+
+.gal-content:hover img {
+  filter: blur(2px);
+  transition: transform 0.4s ease;
+}
+
+@media only screen and (max-width: 810px) {
+  .gal-container {
+    justify-content: center;
+    margin-left: 0px;
+  }
+  .gal-content {
+    width: 320px;
+    height: 320px;
+    margin: 2px;
+  }
+  
+  .gal-content img {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .gal-container {
+    justify-content: center;
+    margin-left: 0px;
+  }
+  .gal-content {
+    width: 300px;
+    height: 300px;
+    margin: 2px;
+  }
+  
+  .gal-content img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+
+/**/
 
 .about-pfp  {
   float: left;
