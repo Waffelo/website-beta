@@ -4,7 +4,8 @@
   </i></blockquote>
 </div>
 <br>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/45c2f0a0-1269-45a3-8955-e642d0d49171/deploy-status)](https://app.netlify.com/sites/waffelo-beta/deploys)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/840c3a72-fa84-46c5-a226-044fe6245e37/deploy-status)](https://app.netlify.com/sites/waffelo/deploys)
 
 <h2>About this website 🦊</h2>
 This is an beta version of my personal website <a href="https://waffelo.net">waffelo.net</a>. This website is meant to be an sort of hub for my "waffelo" stuff. It will have the same old features as waffelo.net <a href="https://github.com/Waffelo/waffelo.net">v2</a>, but just in different style and in new look.
