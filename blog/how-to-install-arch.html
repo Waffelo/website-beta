@@ -1,0 +1,456 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Waffelo's Den</title>
+
+    <!-- Link files -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- Some settings and embed -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta content="WAFFELO.NET | Encrypted arch linux install" property="og:title">
+    <meta content="Here's an guide on how to install Arch Linux with encrypted root partition" property="og:description">
+    <meta name="keywords" content="Waffelo, Linux, Programming, Protogen, Jakub Heger, Heger, Electronics, Python, Rust, Slovakia">
+    <meta content="https://www.waffelo.net" property="og:url">
+    <meta content="" property="og:image">
+    <meta content="" data-react-helmet="true" name="theme-color">
+
+    <!-- Hey! What are you doing here?! -->
+  </head> 
+  <body>
+     
+    
+    <nav>
+      <div class="nav-logo t-center">
+          <img src="https://www.waffelo.net/Assets/wf-badge.png">
+      </div>
+      
+       <!-- end of nav links -->
+    </nav>
+
+    <div class="main-container row flex center">
+ 
+      <div class="grid-container">
+        
+        <div class="grid-item item-bpbar box">
+          <div class="bp-links-nav">
+
+            <a href="https://waffelo.net/"><div class="bp-side-bts">
+              <div class="button bp-side-bt">
+               🏠 Home
+              </div>
+            </div></a>
+
+             <a href="https://waffelo.net/blog"><div class="bp-side-bts">
+              <div class="button bp-side-bt">
+              🗞️ Blog
+              </div>
+            </div></a>
+
+         </div>
+      </div>
+
+
+
+      <div class="grid-item box item-bp-2">
+        <div class="bp-title">How to install encrypted arch linux<div class="bp-date"> 17th September 2022</div> </div>
+      </div>
+
+       <div class="grid-item box item-bp-1">
+        <div class="p-3">
+  
+
+
+
+          <div class="blog-text"> <!-- ================================================================================== -->
+      
+          <p>
+            Arch Linux is a simple, lightweight, flexible and minimal Linux distribution which you can customize to your liking.
+            There are many ways you can customize Arch during the installation process so it suits you.
+
+            <br>
+            I would like to show you how I install my Arch Linux systems with <b>LUKS encrypted root partition.</b>
+          </p>
+          <div class="button button-normal button-link" onclick="location.href='https://wiki.archlinux.org';" style="cursor: pointer;">
+            <span style="color: var(--foreground);">Arch Wiki</span>
+          </div>
+
+          <br><br>
+          <h1>Getting the Arch iso</h1> <hr class="blog-hr-two" align="left"> <!-- ============================== -->
+          <p>
+            First off you need to acquire the Arch liveboot ISO image from the official 
+            <a class="a-text" href="https://archlinux.org/download">Arch Linux website.</a>
+            Simply select the mirror that is closest to you and download the <code>archlinux-[DATE]-x86_64.iso</code>.
+            You can do some signature verification of the file if you want to..
+          </p>
+          <h2>Flashing the iso</h2>
+          <p>
+            Flash the Arch ISO file onto a USB flash drive or DVD disc using <a class="a-text" href="https://www.balena.io/etcher/">Balena Etcher</a>
+            or your other favorite image flashing software.
+          </p>
+
+          <h2>Booting into Arch install enviroment</h2>
+          <p>
+            Plug in the USB Drive with the Arch Linux iso image, go to boot menu and select the USB drive. Before that
+            make sure you <b>disable Secure Boot</b> in the UEFI settings, Secure Boot is often located in the security tab.
+          </p>
+          <br>
+          <h1>Installing Arch</h1> <hr class="blog-hr-two" align="left"> <!-- ============================================ -->
+          <p>
+          Now let's get to the fun part! Set up your network and keyboard layout with the help of <a class="a-text" href="https://wiki.archlinux.org"> Arch Wiki</a>!
+          </p>
+          <h2>Prepare the disks</h2>
+          <p>
+          Prepare your disk using <code>gdisk</code> program.<br> To create the partition press the <code>n</code> key, it will ask you
+          to input partition number, just press the <code>space</code>key and it will automaticall asign the number to the partition. 
+          Space trough the <b>first sector</b>, it is useless for us. When it will ask you for the <b>last sector</b> size, input the 
+          partition size, don't forget to add <code>+</code> in front of the number and the proper letter after the number,
+          <i>M for Megabytes and G for gigabytes</i>. It should look like this: <code>+8G</code>
+          </p>
+          <p>Run the command:</p>
+          <pre class="codeblock">$ gdisk /dev/sdX</pre>
+
+          <br>
+          <table>
+            <tbody>
+              <tr>
+                <th>Name</th>
+                <th>Disk</th>
+                <th>Size</th>
+                <th>Code</th>
+              </tr>
+              <tr>
+                <td>BOOT</td>
+                <td>/dev/sd<b>X</b>1</td>
+                <td>550 MiB</td>
+                <td>ef00</td>
+              </tr>
+              <tr>
+                <td>SWAP</td>
+                <td>/dev/sd<b>X</b>2</td>
+                <td>8 GiB</td>
+                <td>8200</td>
+              </tr>
+              <tr>
+                <td>ROOT</td>
+                <td>/dev/sd<b>X</b>3</td>
+                <td>Remainder</td>
+                <td>8300</td>
+              </tr>
+            </tbody>
+          </table><br>
+          <div class="abox info-box"><font style="color:var(--foreground)">
+            <i class="fa fa-info-circle" aria-hidden="true" style="padding-right: 10px; padding-left: 10px;"></i>
+            <b>Tip</b>
+            <p style="margin-bottom: 0px;">
+              To set the remainder of the root partition just press space and it will automatically assign the
+              remainder of the disk to the partition.
+            </p>
+            <font color="#008cba">
+            </font></font>
+          </div>
+          <p>
+            After you are done with the changes, press the <b>w</b> key and save the changes. If you think you made
+            some mistakes, press the <code>d</code> key and delete the wrong partition, then correct the mistake.
+          </p>
+          <br>
+          <h2>Preparing the LUKS partition</h2> 
+          <p>
+            Before you format your partitions and install Arch on them, you first need to create a LUKS container where
+            your root partition data will be stored at. You will need to use the cryptsetup command. After running the
+            command you will need to input "YES" as verification pharse to start creating the LUKS container. After
+            this you will need to input the encrypted container password and input it again to verify it. Make sure to
+            create the container at <code>/dev/sdX3</code>.
+          </p>
+          <pre class="codeblock">$ cryptsetup -yv luksFormat /dev/sdX3</pre>
+          <p>
+            After successful creation of the LUKS container you will need to open it. The partition that is stored in the
+            LUKS container can be found at <code>/dev/mapper/root</code> after running this command:
+          </p>
+          <pre class="codeblock">$ cryptsetup open /dev/sdX3</pre>
+          <br>
+          <h2>Formatting the partitions</h2>
+          <p>
+            You will need to format the partitions after completing the previous steps..
+          </p>
+          <pre class="codeblock">$ mkfs.ext4 /dev/mapper/root</pre>
+          <pre class="codeblock">$ mkfs.fat -F 32 /dev/sdX1</pre>
+          <pre class="codeblock">$ mkswap /dev/sdX3</pre>
+          
+          <br>
+          <h2>Mounting the partitions</h2>
+          <p>
+            Mount the root and boot partitions to the <code>/mnt</code> directory so you can later proceed to install Arch
+            Linux on these partitions. After mounting the root partition create a boot direcotry <code>/mnt/boot/</code> and
+            mount the boot partition there.
+          </p>
+
+          <pre class="codeblock">$ mount /dev/mapper/root /mnt</pre>
+          <pre class="codeblock">$ mkdir /mnt/boot</pre>
+          <pre class="codeblock">$ mount /dev/sdX1 /mnt/boot</pre>
+          <br>
+
+          <h2>Installing Linux on the mounted partitions</h2>
+          <p>
+            Install the linux kernel and some important packages.
+          </p>
+          
+          <pre class="codeblock">$ pacstrap /mnt base linux linux-firmware vim</pre>
+
+          <br>
+          <h2>Generating the fstab</h2>
+          <p>
+            Don't forget to generate the fstab configuration!
+          </p>
+          <pre class="codeblock">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</pre>
+          
+          <br>
+          <h1>Configuring Arch</h1> <hr class="blog-hr-two" align="left"> <!-- ============================================ -->
+          <p>
+            Now after you have installed Arch Linux on your disk, you need to chroot into it and configure it.
+          </p>
+
+          <pre class="codeblock">$ swapon /dev/sdX2</pre>
+          <pre class="codeblock">$ arch-chroot /mnt</pre>
+          
+          <h2>Configure your locale</h2>
+          <p>
+            You will need to set your keyboard layout, timezone and language of the system.
+            First edit the <code>/etc/locale.gen</code> and comment out your language. After that
+            run this command:
+          </p>
+
+          <pre class="codeblock">$ locale-gen</pre>
+          
+          <br>
+          <h2>Configure your time</h2>
+          <p>
+            To change your timezone, <b>replace</b> the continent and city with your continent and city
+            and run this command.
+          </p>
+ 
+          <div class="abox info-box"><font style="color:var(--foreground)">
+            <i class="fa fa-info-circle" aria-hidden="true" style="padding-right: 10px; padding-left: 10px;"></i>
+            <b>Tip</b>
+            <p style="margin-bottom: 0px;">
+              To view all the availible timezones, run this command:
+            </p>
+            <pre class="codeblock" style="margin-bottom: 0px;">$ timedatectl list-timezones</pre>
+            <font color="#008cba">
+            </font></font>
+          </div>
+          <pre class="codeblock">$ ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime</pre>
+          <p>
+            After running this command, make sure that the change has been done and that your time is
+            correct. This is how to check the time on your system and how the output should look like:
+          </p>
+          <pre class="codeblock">$ timedatectl status</pre>
+          <pre class="codeblock">[waffelo@woof ~]$ timedatectl status
+               Local time: Mon 2022-08-01 16:43:24 CEST
+           Universal time: Mon 2022-08-01 14:43:24 UTC
+                 RTC time: Mon 2022-08-01 14:43:24
+                Time zone: Europe/Bratislava (CEST, +0200)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+          </pre>
+
+          <div class="abox info-box"><font style="color:var(--foreground)">
+            <i class="fa fa-info-circle" aria-hidden="true" style="padding-right: 10px; padding-left: 10px;"></i>
+            <b>Tip</b>
+            <p style="margin-bottom: 0px;">
+              If you want your system to read your hardware clock, run this command:
+            </p>
+            <pre class="codeblock" style="margin-bottom: 0px;">$ hwclock --systohc</pre>
+            <font color="#008cba">
+            </font></font>
+          </div>
+          <br>
+          
+          <h2>Configuring your hostname</h2>
+          <p>
+            Set your hostname by editing the <code>/etc/hostname</code> file, this will give a name ti your
+            computer. My system's name is "woof" so I will write into that file only that.
+          </p>
+          <p>
+            Now set your local host name resolution by editing the <code>/etc/hosts</code>. In this example of
+            the file is my username "woof". <b>Don't forget to replace it with your own hostname!!</b>
+          </p>
+          <pre class="codeblock"># Static table lookup for hostnames.
+# See hosts(5) for details.
+
+127.0.0.1       localhost
+::1             localhost
+127.0.1.1       woof.localdomain        woof
+          </pre>
+          <br>
+          <h2>Configuring root and users</h2>
+          <p>
+            Now change your root password, this will be your administrator password, keep in mind that because of
+            security reasons you <b>SHOULD NOT</b> use root user as your daily user.
+          </p>
+          <pre class="codeblock">$ passwd</pre>
+          <p>
+            After this create an user that will be used by you. Give it a wheel user group so you can use the sudo
+            to run programs that require root priviledges.
+          </p>
+          <pre class="codeblock">$ useradd -mG wheel [your_username]</pre>
+          <p>
+            At last, change the user's password.
+          </p>
+          <pre class="codeblock">$ passwd [your_username]</pre>
+          <br>
+
+          <h2>Installing the bootloader</h2>
+          <p>
+            From this point some parts get very complicated, so be <b>very carefuly</b> look at what 
+            you write, small mistakes like one wrong letter in the wrong place can make your system 
+            useless. However you can fix that later in the liveboot...<br>
+            Install these packages with the pacman:
+          </p>
+          <pre class="codeblock">$ pacman -S efibootmgr grub linux-headers</pre>
+          <p>
+            After installing these packages, install the grub bootloader using this command:
+          </p>
+
+          <pre class="codeblock">$ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</pre>
+          <br>
+          <div class="abox warn-box"><font style="color:var(--foreground)">
+              <i class="fa fa-exclamation-triangle" aria-hidden="true" style="padding-right: 10px; padding-left: 10px;"></i><b>Warning!</b>
+              <p>
+                The command in this codeblock is configured to install grub for x86_64 system. Tweak the
+                command to your system if you need to.
+              </p>
+            <font color="#008cba">
+            </font></font>
+          </div>
+        <br>
+        <p>
+          Generate the grub config.
+        </p>
+        <pre class="codeblock">$ grub-mkconfig -o /boot/grub/grub.cfg</pre>
+        <br>
+        <p>
+          Run the <code>blkid</code> command and get the UUID of the <code>/dev/sdX3</code>.
+          To obtain it more easily, output the command into some file and then go to the file
+          with vim and copy the UUID.
+        </p>
+        <pre class="codeblock">$ blkid &gt;&gt; file</pre>
+       
+            <div class="abox info-box"><font style="color:var(--foreground)">
+                <i class="fa fa-info-circle" aria-hidden="true" style="padding-right: 10px; padding-left: 10px;"></i><b>Tip</b>
+              <p>
+                If you don't know how to copy in vim.. With your cursor in visual mode, go to the start
+                of the UUID and press <code>v</code>. It should highlight the area you are selecting. Now
+                move with hjkl or arrow keys to the and of the UUID while it is getting highlighted and press
+                <code>y</code> to copy the selected text.
+              </p>
+              <img class="img-round" src="https://i.imgur.com/DbRiC0j.png">
+            <font color="#008cba">
+            </font></font>
+          </div>
+  
+          <p>
+            Now go to the <code>/etc/default/grub</code> file and put the UUID inside of <code>
+              GRUB_CMDLINE_LINUX</code>. <b>Don't forget to add the :root after the UUID!</b><br>
+              This is how it should look like:
+          </p>
+        <img class="img-round" src="https://i.imgur.com/GAjialY.png">
+        <p>
+          After that, regenerate the grub config.
+        </p>
+        <pre class="codeblock">$ grub-mkconfig -o /boot/grub/grub.cfg</pre>
+        
+        <br>
+        <h2>Configuring the mkinitcpio</h2>
+        <p>
+          Don't forget to edit the <code>/etc/mkinitcpio.conf</code>. You need to edit the HOOKS in that file..
+          After the autodetect add <b>keyboard</b> and <b>keymap</b>. And after block add <b>encrypt</b> parameters.<br>
+          It should look like this:
+        </p>
+        <pre class="codeblock">HOOKS=(base udev autodetect modconf block encrypt filesystems keyboard fsck)</pre>
+        <p>
+          After you have saved the changes, rebuild the mkinitcpio.
+        </p>
+        <pre class="codeblock">$ mkinitcpio -p linux</pre>
+        <br>
+        <h2>Configuring bluetooth and internet</h2>
+        <p>
+          You need to activate two services to use the internet and bluetooth after you boot to your system for the first time.
+          Simply install thes packages:
+        </p>
+        <pre class="codeblock">$ pacman -S networkmanager bluez bluez-utils pulseaudio-bluetooth</pre>
+        <p>After installing these packages, enable them with systemctl (yes SystemD is stinky and bad.)</p>
+        <pre class="codeblock">$ systemctl enable NetworkManager</pre>
+        <pre class="codeblock">$ systemctl enable bluetooth</pre>
+
+        <br>
+        <h2>Configuring Sudo</h2>
+        <p>
+        To you can properly use <code>sudo</code> with root priviledges, you need to uncomment a line with <code>%wheel</code> in the <code>/etc/sudoers</code>.
+        </p>
+        <img class="img-round" src="https://i.imgur.com/qgdU0HJ.png">
+
+        <br>
+        <h2>Configuring pacman</h2>
+        <p>
+          You will probably want to install application such as steam or discord, for that you will need to enable multilib. You
+          need to edit <code>/etc/pacman.conf</code> and uncomment the multilib repository lines. I recommend you to uncomment the
+          color parameter, it looks a lot nicer that way.
+        </p>
+        <img class="img-round" style="margin-bottom: 10px;" src="https://i.imgur.com/geOODwj.png"><img class="img-round" src="https://i.imgur.com/uDl4sNm.png">
+
+        <p>
+          After that run this command to refresh the pacman.
+        </p>
+        <pre class="codeblock">$ pacman -Syy</pre>
+        
+        <br>
+        <h2>Leaving the chroot</h2>
+        <p>
+          After you made all the changes needed. Leave the chroot.
+        </p>
+        <pre class="codeblock">$ exit</pre>
+        <p>
+          Now unmount all the drives.
+        </p>
+        <pre class="codeblock">$ umount -a</pre>
+        <p> And now finally reboot...</p>
+
+        <h1>Post installation</h1> <hr class="blog-hr-two" align="left"> <!-- ============================================ -->
+        <p>
+          After you have finished all the previous steps, your base Arch Linux installation should be complete! Now the only
+          things to do are configuring the DEs or WMs and some other stuff... Have fun.
+        </p>
+
+
+        </div>
+
+
+
+
+
+
+
+          </div>
+
+       </div> <!-- End of ct1 -->
+
+       
+
+
+
+
+    </div> <!-- grid container end -->
+     <!-- main container end -->
+  
+
+
+<style type="text/css"></style>
+
+
+
+
+
+</body></html>
