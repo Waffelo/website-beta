@@ -1,3 +1,8 @@
+::selection {
+  background-color: #4d2c80;
+  color: #19171c;
+}
+
 @-webkit-keyframes scrolling {
     from {
         background-position: 0 0;
@@ -270,8 +275,22 @@ hr {
   border-style: solid;
 }
 
+.blog-hr-two {
+  width: 90%;
+  max-width: 700px;
+}
+
 hr2 {
   max-width: 15px;
+}
+
+code {
+  border-radius: 4px;
+  white-space: nowrap;
+  color: #736f77;
+  background: var(--background3);
+  border: 1px solid #4a404d;
+  padding: 0px 4px;
 }
 
 .box {
@@ -418,6 +437,19 @@ nav {
   width: 100%;
   position: absolute;
   top: 99%;
+}
+
+.button-link::before {
+  content: "🔗";
+  padding-right: 6px;
+  color: var(--foreground);
+}
+
+.button-normal {
+  color: #0000;
+  background-color: #0000002e;
+  max-width: 122px;
+  padding: 11px;
 }
 
 nav hr {
@@ -688,6 +720,7 @@ nav hr {
   margin-left: 5px;
   font-size: 26;
   font-weight: 800;
+  line-height: 25px;
 }
 
 .bp-date {
@@ -937,7 +970,6 @@ nav hr {
   margin-top: 2px;
   margin-bottom: 6px;
   font-size: 13px;
-  padding-top: 2px;
 }
 
 
@@ -967,7 +999,7 @@ nav hr {
 
 .btn-ln-discord {
    background: rgb(88,101,242);
-   background: linear-gradient(90deg, rgba(88,101,242,1) 0%, rgba(150,90,247,1) 100%); 
+   background: linear-gradient(90deg, rgba(88,101,242,1) 0%, rgb(146, 86, 196) 100%); 
     width: 100%;
     padding-top: 4px;
     padding-bottom: 5px;
@@ -994,7 +1026,7 @@ background: linear-gradient(90deg, rgba(176,43,78,1) 0%, rgba(222,21,21,1) 100%)
 }
 .btn-ln-telegram {
  background: rgb(101,144,246);
-background: linear-gradient(90deg, rgba(101,144,246,1) 0%, rgba(92,100,163,1) 100%); 
+background: linear-gradient(90deg, rgb(80, 143, 168) 0%, rgb(48, 83, 138) 100%); 
 }
 
 .btn--ln-twitter {
