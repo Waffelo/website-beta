@@ -546,7 +546,7 @@ nav hr {
 
 .item-ln-1 {
   grid-column: 1 / 50;
-  grid-row: 1 / span 49;
+  grid-row: 1 / span 30;
   padding-top: 0px;
   width: 100%;
 }
@@ -565,7 +565,7 @@ nav hr {
 
 .item-ln-4 {
   grid-column: 1 / 50;
-  grid-row: 50 / span 100;
+  grid-row: 31 / span 100;
 }
 
 /*= GRID ABOUT ME ===============*/
