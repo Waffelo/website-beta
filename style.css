@@ -12,6 +12,10 @@
     }
 }
 
+.nav-logo a {
+  padding-top: 50px;
+}
+
 @font-face {
  font-family:"Iosevka";
  font-style: normal;
