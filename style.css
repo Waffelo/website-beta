@@ -1427,8 +1427,68 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   margin-top: 9px;
 }
 
+/*= BLG Categires ======*/
+
+.button-blg-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 101%;
+  /*! margin-left: -39px; */
+  margin-bottom: -2px;
+}
+  
+.btn-blg-scl {
+  min-width: 96%;
+  width: 115px;
+  margin-left: 23px;
+  /*! margin-right: 11px; */
+}
+
+.btn-blg-img {
+  padding-bottom: 0px;
+  margin-top: auto;
+  padding-top: 5px;
+}
+
+.btn-blg-img img {
+  width: 30px;
+  margin-left: 0px;
+  margin-bottom: 8px;
+  margin-top: 9px;
+}
+
+.btn-blg-title {
+  padding-bottom: 7px;
+  color: var(--foreground);
+}
+
+.btn-blg:hover {
+  background-color: #1d1a21;
+
+}
+
+.btn-blg {
+  min-width: 13%;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: var(--background3);
+  width: 120px;
+  height: 80px;
+}
+
+.b-blg-box {
+  width: 681px;
+  margin-left: -4px;
+  margin-bottom: 0px;
+}
+
 @media only screen and (max-width: 810px) {
 
+  .button-blg-box {
+    justify-content: center;
+  }
+  
   .blog-card-box {
     justify-content: center;
     margin-right: auto;
@@ -1589,6 +1649,11 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
 
 @media only screen and (max-width: 810px) {
 
+  .b-blg-box {
+    max-width: 100%;
+    margin-left: auto;
+  }
+  
   .projects-card-box {
     justify-content: center;
     width: 100%;
