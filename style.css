@@ -1485,6 +1485,11 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
 
 @media only screen and (max-width: 810px) {
 
+  .btn-blg {
+    width: 85px;
+    height: 78px;
+  }
+  
   .button-blg-box {
     justify-content: center;
   }
