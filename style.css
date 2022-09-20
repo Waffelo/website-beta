@@ -769,6 +769,7 @@ nav hr {
   background-color: #4a404d;
   border-radius: 12px;
   
+  display: flex;
 }
 
 .gal-caption {
@@ -796,9 +797,10 @@ nav hr {
 
 .gal-content img {
   height: 250px;
-  width: 250px;
   transition: transform 0.4s ease;
   
+  justify-content: center;
+  position: absolute;
 }
 
 .gal-content:hover img { 
@@ -1485,11 +1487,6 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
 
 @media only screen and (max-width: 810px) {
 
-  .btn-blg {
-    width: 85px;
-    height: 78px;
-  }
-  
   .button-blg-box {
     justify-content: center;
   }
