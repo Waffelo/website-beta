@@ -1125,6 +1125,11 @@ nav hr {
 background: linear-gradient(90deg, rgba(87,82,121,1) 0%, rgba(180,99,122,1) 100%); 
 }
 
+.btn-ln-xmpp {
+  background: rgb(32,131,128);
+  background: linear-gradient(90deg, rgb(205, 97, 236) 0%, rgb(58, 118, 183) 100%);
+}
+
 .btn-ln-matrix {
  background: rgb(32,131,128);
 background: linear-gradient(90deg, rgba(32,131,128,1) 0%, rgba(26,193,147,1) 100%); 
