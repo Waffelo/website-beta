@@ -180,6 +180,17 @@ body {
   font-style: italic;
 }
 
+.a-text {
+  color: #8b8699;
+  font-style: italic;
+}
+
+.a-text:hover {
+  color: #8b8699;
+  font-style: italic;
+  text-decoration: underline;
+}
+
 h1, h2, h3, h4 {
  margin: inherit !important;
  margin-top: 0;
