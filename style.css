@@ -259,6 +259,15 @@ a {
   padding-top: 7px;
 }
 
+.ba {
+  text-decoration: underline;
+  font-weight: 800;
+}
+
+.ba:hover{
+  color: var(--foreground2);
+}
+
 
 /*= Display Tags ===========*/
 
