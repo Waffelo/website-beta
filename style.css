@@ -326,6 +326,17 @@ code {
   padding-bottom: initial;
 }
 
+.button-88-box {
+}
+
+.button-88-box img {
+  width: 120px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 5px;
+}
+
 video {
   max-width: 650px
 }
@@ -592,6 +603,11 @@ nav hr {
   grid-row: 46 / span 100;
 }
 
+.item-ln-6 {
+  grid-column: 50 / 62;
+  grid-row: 61 / span 20;
+}
+
 /*= GRID ABOUT ME ===============*/
 
 .item-ab-1 {
@@ -699,6 +715,69 @@ nav hr {
 .item-jr-4 {
   grid-column: 42 / 62;
   grid-row: 31 / span 40;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-jr-5 {
+  grid-column: 1 / 22;
+  grid-row: 71 / span 40;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-jr-6 {
+  grid-column: 22 / 42;
+  grid-row: 71 / span 40;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-jr-7 {
+  grid-column: 42 / 62;
+  grid-row: 71 / span 40;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-jr-8 {
+  grid-column: 1 / 22;
+  grid-row: 111 / span 40;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-jr-9 {
+  grid-column: 22 / 42;
+  grid-row: 111 / span 40;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-jr-10 {
+  grid-column: 42 / 62;
+  grid-row: 111 / span 40;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-jr-11 {
+  grid-column: 1 / 22;
+  grid-row: 151 / span 40;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-jr-12 {
+  grid-column: 22 / 42;
+  grid-row: 151 / span 40;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.item-jr-13 {
+  grid-column: 42 / 62;
+  grid-row: 151 / span 40;
   padding-top: 0px;
   width: 100%;
 }
@@ -816,11 +895,12 @@ nav hr {
 }
 
 .gal-content img {
-  height: 250px;
+  height: 112%;
   transition: transform 0.4s ease;
   
   justify-content: center;
   position: absolute;
+  width: 100%;
 }
 
 .gal-content:hover img { 
@@ -1220,6 +1300,17 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  
+  .button-88-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+   .button-88-box img{
+    margin-right: 10px;
+    margin-left: 10px;
   }
   
   .btn-ln-scl {
