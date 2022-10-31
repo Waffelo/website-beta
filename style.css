@@ -326,6 +326,67 @@ code {
   padding-bottom: initial;
 }
 
+.box-yglow {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  padding-top: initial;
+  padding-bottom: initial;
+  border: #ffc5184a solid 2px;
+  box-shadow: 0px 0px 20px 1px #ffc5182b;
+}
+
+.box-bglow {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  padding-top: initial;
+  padding-bottom: initial;
+  border: #38b4ff4a solid 2px;
+  box-shadow: 0px 0px 20px 1px #18dfff2b;
+}
+
+.box-rglow {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  padding-top: initial;
+  padding-bottom: initial;
+  border: #fb38384a solid 2px;
+  box-shadow: 0px 0px 20px 1px #ff18182b;
+}
+
+.box-piglow {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  padding-top: initial;
+  padding-bottom: initial;
+  border: #e14ed14a solid 2px;
+  box-shadow: 0px 0px 20px 1px #ff18e62b;
+}
+
+.box-pglow {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  padding-top: initial;
+  padding-bottom: initial;
+  border: #8235ce4a solid 2px;
+  box-shadow: 0px 0px 20px 1px #6018ff2b;
+}
+
+.box-gglow {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  padding-top: initial;
+  padding-bottom: initial;
+  border: #65fd5830 solid 2px;
+  box-shadow: 0px 0px 20px 1px #35ff182b;
+}
+
+
 .button-88-box {
 }
 
