@@ -1970,7 +1970,20 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
 
 }
 
+.error-container {
+  width: 75%;
+  height: 200px;
+  max-width: 364px;
+  padding: 10px;
+  background: var(--background);
+  border-radius: 12px;
+  margin-top: 352px;
+}
 
-
+.error-box {
+  height: 180px;
+  top: 50%;
+  left: 76%;
+}
 
 
