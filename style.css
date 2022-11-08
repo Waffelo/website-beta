@@ -2128,11 +2128,92 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   border-radius: 12px;
   margin-top: 352px;
   word-wrap: break-word;
-  min-height: 222px;
+  height: 21%;
 }
 
 .monero-box {
-  height: 180px;
+  height: 99%;
   top: 50%;
   left: 76%;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .monero-container {
+  max-width: 969px;
+  padding: 10px;
+  background: var(--background);
+  border-radius: 12px;
+  margin-top: 352px;
+  word-wrap: break-word;
+  height: 27%;
+}
+
+.monero-box {
+  height: 99%;
+  top: 50%;
+  left: 76%;
+}
+  
+}
+
+
+@media only screen and (max-width: 800px) {
+
+  .monero-container {
+  max-width: 969px;
+  padding: 10px;
+  background: var(--background);
+  border-radius: 12px;
+  margin-top: 352px;
+  word-wrap: break-word;
+  height: 24%;
+}
+
+.monero-box {
+  height: 99%;
+  top: 50%;
+  left: 76%;
+}
+  
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .monero-container {
+  max-width: 969px;
+  padding: 10px;
+  background: var(--background);
+  border-radius: 12px;
+  margin-top: 352px;
+  word-wrap: break-word;
+  height: 24%;
+}
+
+.monero-box {
+  height: 99%;
+  top: 50%;
+  left: 76%;
+}
+  
+}
+
+@media only screen and (max-width: 500px) {
+
+  .monero-container {
+  max-width: 969px;
+  padding: 10px;
+  background: var(--background);
+  border-radius: 12px;
+  margin-top: 352px;
+  word-wrap: break-word;
+  height: 26%;
+}
+
+.monero-box {
+  height: 99%;
+  top: 50%;
+  left: 76%;
+}
+  
 }
