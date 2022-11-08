@@ -757,6 +757,73 @@ nav hr {
   width: 100%;
 }
 
+.item-ct-6 {
+  grid-column: 1 / 62;
+  grid-row: 91 / span 30;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.dnt-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dnt-btn {
+  width: 46.8%;
+  border-radius: 12px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.dnt-btn-img {
+  display: flex;
+  justify-content: center;
+}
+
+.dnt-btn-img img {
+  width: 75px;
+  padding: 10px;
+}
+
+.dnt-monero {
+ background: rgb(213,54,54);
+background: linear-gradient(90deg, rgba(213,54,54,1) 0%, rgba(230,35,106,1) 100%); }
+
+.dnt-librepay {
+   background: rgb(190,182,37);
+background: linear-gradient(90deg, rgb(244, 93, 19) 0%, rgb(189, 170, 17) 100%); 
+}
+
+.dnt-btn-title {
+  color: white;
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;;
+  margin-right: auto;
+  padding-bottom: 7px;
+  width: 100%;
+  margin-top: -4px;
+}
+
+.dnt-btn-title-t {
+  width: 46px;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .dnt-box {
+    margin-top: 50px;
+  }
+  
+  .dnt-btn {
+    width: 100%;
+  }
+}
+
 /**/
 
 .item-jr-2 {
