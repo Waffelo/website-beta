@@ -324,6 +324,7 @@ code {
   border-radius: 8px;
   padding-top: initial;
   padding-bottom: initial;
+  min-height: inherit;
 }
 
 .box-yglow {
@@ -773,7 +774,7 @@ nav hr {
 }
 
 .dnt-btn {
-  width: 46.8%;
+  width: 30.8%;
   border-radius: 12px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -791,11 +792,16 @@ nav hr {
 
 .dnt-monero {
  background: rgb(213,54,54);
-background: linear-gradient(90deg, rgba(213,54,54,1) 0%, rgba(230,35,106,1) 100%); }
+background: linear-gradient(90deg, rgba(213,54,54,1) 0%, rgba(230,35,106,1) 100%); 
+}
 
 .dnt-librepay {
    background: rgb(190,182,37);
-background: linear-gradient(90deg, rgb(244, 93, 19) 0%, rgb(189, 170, 17) 100%); 
+background: linear-gradient(90deg, rgb(244, 198, 19) 0%, rgb(232, 79, 101) 100%); 
+}
+.dnt-paypal {
+     background: rgb(190,182,37);
+background: linear-gradient(90deg, rgb(19, 75, 244) 0%, rgb(119, 17, 189) 100%); 
 }
 
 .dnt-btn-title {
@@ -2115,4 +2121,18 @@ background: linear-gradient(90deg, rgba(29,161,242,1) 0%, rgba(74,110,255,1) 100
   left: 76%;
 }
 
+.monero-container {
+  max-width: 969px;
+  padding: 10px;
+  background: var(--background);
+  border-radius: 12px;
+  margin-top: 352px;
+  word-wrap: break-word;
+  min-height: 222px;
+}
 
+.monero-box {
+  height: 180px;
+  top: 50%;
+  left: 76%;
+}

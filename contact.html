@@ -17,6 +17,15 @@
     <meta content="" property="og:image">
     <meta name="theme-color" content="#895bd9">
 
+    <script>
+        function copyEvent(id)
+        {
+            var str = ""
+            window.getSelection().selectAllChildren(str);
+            document.execCommand("Copy")
+        }
+    </script>
+
     <!-- Hey! What are you doing here?! -->
   </head> 
   <body>
@@ -273,6 +282,15 @@
               </div>
               <div class="dnt-btn-title">
                 LiberaPay
+              </div>
+            </div>
+
+            <div class="dnt-btn dnt-paypal" onclick="location.href='https://www.paypal.com/paypalme/waffeloo';" style="cursor: pointer;">
+              <div class="dnt-btn-img">
+                <img src="assets/icons/paypal-white.png" alt="Paypal">
+              </div>
+              <div class="dnt-btn-title">
+                Paypal <!>
               </div>
             </div>
 
